@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavya Kaushal — Marketing & Strategy</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0f2a4a; --teal: #1D9E75; --teal-l: #E1F5EE; --teal-m: #0F6E56;
+  --amber: #BA7517; --amber-l: #FAEEDA;
+  --text: #1a1a2e; --muted: #5a5a6e; --border: rgba(0,0,0,0.08); --bg: #f9f8f6;
+}
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; overflow-x: hidden; }
+nav { position: sticky; top: 0; z-index: 200; background: rgba(249,248,246,0.88); backdrop-filter: blur(20px); border-bottom: 0.5px solid rgba(0,0,0,0.1); display: flex; align-items: center; gap: 1.5rem; padding: 0 1.5rem; height: 48px; }
+.nav-logo { font-size: 14px; font-weight: 600; color: var(--navy); margin-right: auto; }
+nav a { font-size: 12px; color: var(--muted); text-decoration: none; cursor: pointer; transition: color 0.2s; }
+nav a:hover { color: var(--teal); }
+.ani { opacity: 0; transform: translateY(36px); transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+.ani.from-left  { transform: translateX(-44px); }
+.ani.from-right { transform: translateX(44px); }
+.ani.from-scale { transform: scale(0.93); }
+.ani.on { opacity: 1 !important; transform: none !important; }
+.d1 { transition-delay: 0.06s; } .d2 { transition-delay: 0.14s; } .d3 { transition-delay: 0.22s; } .d4 { transition-delay: 0.30s; }
+.hero { background: #060e1a; padding: 3.5rem 1.5rem 3rem; position: relative; overflow: hidden; }
+.hero-glow  { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(29,158,117,0.16) 0%, transparent 70%); top: -80px; right: -80px; pointer-events: none; animation: pulse 4s ease-in-out infinite; }
+.hero-glow2 { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(24,95,165,0.1) 0%, transparent 70%); bottom: -40px; left: 5%; pointer-events: none; animation: pulse 5s ease-in-out infinite 1s; }
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
+.hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; }
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; background: rgba(29,158,117,0.15); border: 1px solid rgba(29,158,117,0.3); color: #5DCAA5; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 30px; margin-bottom: 1rem; animation: hfadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both; }
+.eyebrow::before { content:''; width:6px; height:6px; border-radius:50%; background:#5DCAA5; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes hfadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+.hero h1 { font-size: clamp(2.4rem,5.5vw,4.2rem); font-weight: 700; letter-spacing: -2px; line-height: 1.0; color: white; margin-bottom: 1rem; animation: hfadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.32s both; }
+.hero h1 em { font-style: normal; color: #5DCAA5; }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,0.58); max-width: 500px; margin-bottom: 1.5rem; line-height: 1.65; animation: hfadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.44s both; }
+.hero-stats { display: flex; gap: 2rem; margin-bottom: 1.75rem; flex-wrap: wrap; animation: hfadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.56s both; }
+.stat-num { font-size: 1.7rem; font-weight: 700; color: #5DCAA5; display: block; letter-spacing: -1px; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.4); }
+.hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; animation: hfadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.68s both; }
+.btn-p { background: var(--teal); color: white; border: none; padding: 10px 22px; border-radius: 30px; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display:inline-block; }
+.btn-p:hover { background: var(--teal-m); transform: scale(1.03); }
+.btn-g { background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 10px 22px; border-radius: 30px; font-size: 13px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display:inline-block; }
+.btn-g:hover { background: rgba(255,255,255,0.14); transform: scale(1.03); }
+.scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 5px; color: rgba(255,255,255,0.25); font-size: 10px; letter-spacing: 1.5px; margin-top: 2rem; animation: hfadeUp 1s 1s both; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent); animation: sdrop 1.6s ease-in-out infinite; }
+@keyframes sdrop { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+section { padding: 3rem 1.5rem; }
+.inner { max-width: 860px; margin: 0 auto; }
+.s-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 0.25rem; }
+.s-title { font-size: clamp(1.5rem,2.8vw,2.1rem); font-weight: 700; color: var(--navy); letter-spacing: -0.6px; margin-bottom: 0.4rem; }
+.s-desc  { color: var(--muted); font-size: 14px; margin-bottom: 1.5rem; }
+#about { background: white; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.about-card { background: var(--bg); border-radius: 12px; padding: 1.1rem 1.25rem; border: 0.5px solid var(--border); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.about-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.about-card h3 { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.4rem; font-weight: 600; }
+.about-card p  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+#experience { background: var(--bg); }
+.exp-card { background: white; border-radius: 12px; padding: 1.25rem 1.4rem; border: 0.5px solid var(--border); margin-bottom: 0.75rem; border-left: 3px solid var(--teal); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.exp-card:hover { transform: translateX(4px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.exp-title   { font-size: 14px; font-weight: 600; color: var(--navy); }
+.exp-company { font-size: 12px; color: var(--teal); font-weight: 500; margin: 1px 0; }
+.exp-date    { font-size: 11px; background: var(--teal-l); color: var(--teal-m); padding: 2px 9px; border-radius: 20px; white-space: nowrap; font-weight: 500; flex-shrink: 0; }
+.exp-bullets { list-style: none; margin-top: 0.5rem; }
+.exp-bullets li { font-size: 13px; color: var(--muted); padding: 2px 0 2px 1rem; position: relative; line-height: 1.55; }
+.exp-bullets li::before { content:'→'; position: absolute; left: 0; color: var(--teal); font-size: 11px; top: 3px; }
+#projects { background: white; }
+.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.proj-card { background: var(--bg); border-radius: 12px; padding: 1.25rem; border: 0.5px solid var(--border); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.proj-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
+.proj-tag  { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; padding: 3px 9px; border-radius: 20px; display: inline-block; margin-bottom: 0.6rem; }
+.tag-teal  { background: var(--teal-l); color: var(--teal-m); }
+.tag-amber { background: var(--amber-l); color: var(--amber); }
+.proj-card h3 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.proj-card p  { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
+.metric-pill  { font-size: 11px; background: white; border: 0.5px solid var(--border); color: var(--text); padding: 2px 8px; border-radius: 20px; display: inline-block; margin: 2px; font-weight: 500; }
+#skills { background: #060e1a; position: relative; overflow: hidden; }
+#skills::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 20% 50%, rgba(29,158,117,0.07) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(24,95,165,0.05) 0%, transparent 55%); pointer-events:none; }
+#skills .s-label { color: #5DCAA5; }
+#skills .s-title { color: white; }
+#skills .s-desc  { color: rgba(255,255,255,0.4); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(175px,1fr)); gap: 0.75rem; margin-bottom: 1rem; position: relative; z-index:1; }
+.skill-group { background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; transition: background 0.3s, border-color 0.3s; }
+.skill-group:hover { background: rgba(255,255,255,0.07); border-color: rgba(29,158,117,0.3); }
+.skill-group h3 { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #5DCAA5; font-weight: 600; margin-bottom: 0.6rem; }
+.skill-tag { font-size: 11px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.65); padding: 2px 8px; border-radius: 20px; display: inline-block; margin: 2px; }
+.tools-row { display: flex; flex-wrap: wrap; gap: 6px; position: relative; z-index:1; margin-top: 0.75rem; }
+.tool-chip { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.09); color: rgba(255,255,255,0.65); padding: 6px 12px; border-radius: 8px; font-size: 12px; transition: background 0.2s, color 0.2s; cursor:default; }
+.tool-chip:hover { background: rgba(29,158,117,0.15); border-color: rgba(29,158,117,0.3); color: #5DCAA5; }
+#education { background: var(--bg); }
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.edu-card { background: white; border-radius: 12px; padding: 1.25rem; border: 0.5px solid var(--border); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; }
+.edu-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.edu-degree { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+.edu-uni    { font-size: 13px; color: var(--teal); font-weight: 500; margin-bottom: 3px; }
+.edu-year   { font-size: 12px; color: var(--muted); }
+#contact { background: white; }
+.contact-box { background: linear-gradient(135deg,#060e1a 0%,#0f2a4a 50%,#0d3d2a 100%); border-radius: 20px; padding: 3rem 2rem; text-align: center; color: white; position: relative; overflow: hidden; }
+.contact-box::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at center, rgba(29,158,117,0.1) 0%, transparent 60%); }
+.contact-box h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.4px; position: relative; }
+.contact-box p  { color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; font-size: 14px; position: relative; }
+.contact-links  { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; position: relative; }
+.contact-link   { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.15); color: white; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-size: 13px; transition: all 0.2s; }
+.contact-link:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+.contact-link.primary { background: var(--teal); border-color: var(--teal); }
+.contact-link.primary:hover { background: var(--teal-m); }
+footer { background: #060e1a; color: rgba(255,255,255,0.22); text-align: center; padding: 1.1rem; font-size: 11px; }
+@media(max-width:580px){ .about-grid,.proj-grid,.edu-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Bhavya Kaushal</span>
+  <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
+  <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
+  <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</a>
+  <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a>
+  <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+</nav>
+<div class="hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">MBA Marketing · RMIT University · Melbourne</div>
+    <h1>Bhavya<br><em>Kaushal</em></h1>
+    <p class="hero-sub">Marketing strategist with 2+ years leading retail operations, SEO strategy, and data-driven growth. I turn insights into measurable outcomes.</p>
+    <div class="hero-stats">
+      <div><span class="stat-num">20%</span><span class="stat-label">Inventory error reduction</span></div>
+      <div><span class="stat-num">15%</span><span class="stat-label">Sales uplift in 6 months</span></div>
+      <div><span class="stat-num">18:1</span><span class="stat-label">CLV/CAC ratio delivered</span></div>
+      <div><span class="stat-num">12+</span><span class="stat-label">Suppliers managed</span></div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</a>
+      <a class="btn-g" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See my work ↓</a>
+    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div>SCROLL</div>
+  </div>
+</div>
+<section id="about">
+  <div class="inner">
+    <div class="s-label ani">About me</div>
+    <div class="s-title ani d1">Analytical thinker. Hands-on executor.</div>
+    <p class="s-desc ani d2">MBA graduate seeking marketing, growth, or consulting roles — especially in the Indian market.</p>
+    <div class="about-grid">
+      <div class="about-card ani from-left d1"><h3>Background</h3><p>MBA (Marketing) from RMIT University with a foundation in data-backed decision making, customer journey mapping, and digital strategy. Led retail operations managing 1,000+ SKUs and 12+ supplier relationships.</p></div>
+      <div class="about-card ani from-right d2"><h3>What I bring</h3><p>I blend analytical rigour with operational execution — building SEO strategies from keyword research, running A/B tests, and presenting insights to senior stakeholders in live consulting settings.</p></div>
+      <div class="about-card ani from-left d3"><h3>Focus areas</h3><p>Marketing strategy · SEO & growth · Customer experience · Business consulting · Data-driven campaigns</p></div>
+      <div class="about-card ani from-right d4"><h3>Location</h3><p>Based in Melbourne, Australia. Open to opportunities in the Indian market and remote roles globally.</p></div>
+    </div>
+  </div>
+</section>
+<section id="experience">
+  <div class="inner">
+    <div class="s-label ani">Experience</div>
+    <div class="s-title ani d1">Where I've made an impact</div>
+    <p class="s-desc ani d2">From retail leadership to digital marketing — here's what I've delivered.</p>
+    <div class="exp-card ani d2">
+      <div class="exp-header">
+        <div><div class="exp-title">SEO & Marketing Intern — Client Strategy</div><div class="exp-company">ECPL (Education Culture Pvt Ltd) · Remote</div></div>
+        <span class="exp-date">Feb 2026 – Present</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Keyword research, competitor scans, and on-page recommendations for client websites</li>
+        <li>Built full SEO strategies — site structure, content clusters, internal linking aligned to search intent</li>
+        <li>Created content briefs using Ahrefs/SEMrush metrics and SERP analysis</li>
+        <li>Tracked keyword rankings and iterated recommendations based on SERP changes</li>
+      </ul>
+    </div>
+    <div class="exp-card ani d3">
+      <div class="exp-header">
+        <div><div class="exp-title">Media Search Analyst</div><div class="exp-company">TELUS International AI · Remote</div></div>
+        <span class="exp-date">Mar 2026 – Present</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Evaluating search results and media content for relevance, intent alignment, and quality</li>
+        <li>Identifying mismatches in search suggestions to improve user experience</li>
+        <li>Maintaining accuracy and consistency across digital content reviews</li>
+      </ul>
+    </div>
+    <div class="exp-card ani d4">
+      <div class="exp-header">
+        <div><div class="exp-title">Assistant Retail Manager — Marketing & Operations</div><div class="exp-company">FoodWorks · South Wharf, Melbourne</div></div>
+        <span class="exp-date">Jul 2023 – Dec 2025</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Reduced stock discrepancies ~20% across 1,000+ SKUs via supplier coordination and weekly audits</li>
+        <li>Executed monthly merchandising plans driving 15% uplift in high-margin category sales</li>
+        <li>Managed 12+ supplier relationships, renegotiating terms to cut overstocking by 30%</li>
+        <li>Analysed sales performance and customer preferences to inform category-focused promotions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="inner">
+    <div class="s-label ani">Projects</div>
+    <div class="s-title ani d1">Consulting & academic work</div>
+    <p class="s-desc ani d2">Real-world projects applying strategic frameworks to deliver measurable insights.</p>
+    <div class="proj-grid">
+      <div class="proj-card ani from-left d2">
+        <span class="proj-tag tag-teal">Client Consulting</span>
+        <h3>Alinta Energy — Customer Profitability</h3>
+        <p>Proposed a CLV vs CAC framework revealing an 18:1 ratio, acknowledged by an Alinta executive. Reframed the bill-shock problem using behavioural insights and journey mapping, contributing to a proposal for predictive billing and loyalty solutions.</p>
+        <span class="metric-pill">18:1 CLV/CAC</span><span class="metric-pill">Journey mapping</span><span class="metric-pill">Behavioural insights</span>
+      </div>
+      <div class="proj-card ani from-right d3">
+        <span class="proj-tag tag-amber">Marketing Simulation</span>
+        <h3>ExerciseMinder — 9-Year Simulation</h3>
+        <p>Led a multi-year simulation achieving ROMI of 2.27 and 96.1% retention. Used regression analysis and A/B testing to optimise channel spend. Pivoted to email marketing and gamification to reduce churn.</p>
+        <span class="metric-pill">ROMI 2.27</span><span class="metric-pill">96.1% retention</span><span class="metric-pill">A/B testing</span><span class="metric-pill">Regression analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="inner">
+    <div class="s-label ani">Skills</div>
+    <div class="s-title ani d1">What I work with</div>
+    <p class="s-desc ani d2">Strategic, analytical, and operational capabilities.</p>
+    <div class="skills-grid">
+      <div class="skill-group ani d1"><h3>Marketing & Strategy</h3><span class="skill-tag">Customer journey mapping</span><span class="skill-tag">SEO strategy</span><span class="skill-tag">Go-to-market</span><span class="skill-tag">Brand strategy</span><span class="skill-tag">Campaign planning</span><span class="skill-tag">Market research</span></div>
+      <div class="skill-group ani d2"><h3>Consulting</h3><span class="skill-tag">CLV/CAC analysis</span><span class="skill-tag">Data-driven decisions</span><span class="skill-tag">Stakeholder management</span><span class="skill-tag">Problem reframing</span><span class="skill-tag">Behavioural insights</span></div>
+      <div class="skill-group ani d3"><h3>Operations</h3><span class="skill-tag">Inventory management</span><span class="skill-tag">Supplier negotiation</span><span class="skill-tag">Merchandising</span><span class="skill-tag">Category management</span></div>
+      <div class="skill-group ani d4"><h3>Leadership</h3><span class="skill-tag">Team supervision</span><span class="skill-tag">Cross-functional collaboration</span><span class="skill-tag">Communication</span><span class="skill-tag">Adaptability</span></div>
+    </div>
+    <div class="tools-row ani d3">
+      <span class="tool-chip">Google Analytics</span><span class="tool-chip">Tableau</span><span class="tool-chip">Excel (Advanced)</span><span class="tool-chip">Ahrefs</span><span class="tool-chip">SEMrush</span><span class="tool-chip">Mailchimp</span><span class="tool-chip">HubSpot</span><span class="tool-chip">Canva</span><span class="tool-chip">PowerPoint</span>
+    </div>
+  </div>
+</section>
+<section id="education">
+  <div class="inner">
+    <div class="s-label ani">Education</div>
+    <div class="s-title ani d1">Academic foundation</div>
+    <p class="s-desc ani d2">Formal training in marketing, strategy, and business management.</p>
+    <div class="edu-grid">
+      <div class="edu-card ani from-left d2"><div class="edu-degree">MBA — Marketing</div><div class="edu-uni">RMIT University, Melbourne</div><div class="edu-year">Graduated 2025</div></div>
+      <div class="edu-card ani from-right d3"><div class="edu-degree">Bachelor of Arts (Honours)</div><div class="edu-uni">Panjab University, Chandigarh</div><div class="edu-year">Graduated 2021</div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="inner">
+    <div class="contact-box ani from-scale">
+      <h2>Let's connect</h2>
+      <p>Open to marketing, growth, and consulting opportunities — especially in the Indian market.</p>
+      <div class="contact-links">
+        <a class="contact-link primary" href="mailto:Kaushalbhavya2@gmail.com">✉ Email me</a>
+        <a class="contact-link" href="https://linkedin.com/in/bhavya-kaushal-123088123" target="_blank">LinkedIn ↗</a>
+        <a class="contact-link" href="tel:+61478040923">+61 478 040 923</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>Bhavya Kaushal · MBA Marketing · Melbourne, Australia</footer>
+<script>
+function checkVisible() {
+  document.querySelectorAll('.ani:not(.on)').forEach(function(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < (window.innerHeight || document.documentElement.clientHeight) - 40) {
+      el.classList.add('on');
+    }
+  });
+}
+window.addEventListener('scroll', checkVisible, { passive: true });
+setTimeout(checkVisible, 100);
+</script>
+</body>
+</html>
