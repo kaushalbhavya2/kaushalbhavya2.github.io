@@ -3,491 +3,672 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavya Kaushal — Marketing &amp; Strategy</title>
+<title>Bhavya Kaushal — Marketing and Growth Analyst</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --navy:#0f2a4a;--teal:#1D9E75;--teal-l:#E1F5EE;--teal-m:#0F6E56;
-  --amber:#BA7517;--amber-l:#FAEEDA;--blue:#185FA5;--blue-l:#E6F1FB;
-  --coral:#D85A30;--coral-l:#FAECE7;
-  --text:#1a1a2e;--muted:#5a5a6e;--border:rgba(0,0,0,0.08);--bg:#f9f8f6;
+  --navy:#0b1f3a;
+  --navy2:#132d4f;
+  --teal:#1cb87a;
+  --teal-d:#0e8a58;
+  --teal-l:#e2f5ec;
+  --amber:#c47d0e;
+  --amber-l:#fef3dc;
+  --blue:#1a6bbf;
+  --blue-l:#e8f1fb;
+  --coral:#c94f2c;
+  --coral-l:#faeae5;
+  --text:#16213e;
+  --muted:#60697a;
+  --light:#f8f8f6;
+  --border:rgba(0,0,0,0.07);
+  --white:#ffffff;
 }
 html{scroll-behavior:smooth;}
-body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:var(--light);color:var(--text);overflow-x:hidden;line-height:1.6;}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(249,248,246,0.92);backdrop-filter:blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.1);display:flex;align-items:center;gap:1.5rem;padding:0 2rem;height:52px;}
-.nav-logo{font-size:15px;font-weight:700;color:var(--navy);margin-right:auto;letter-spacing:-0.3px;}
-nav a{font-size:12px;color:var(--muted);text-decoration:none;cursor:pointer;transition:color 0.2s;letter-spacing:0.3px;}
-nav a:hover{color:var(--teal);}
-
-/* ANIMATIONS */
-.ani{opacity:0;transform:translateY(32px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);}
-.ani.from-left{transform:translateX(-44px);}
-.ani.from-right{transform:translateX(44px);}
-.ani.from-scale{transform:scale(0.93);}
+/* ─── SCROLL ANIMATIONS ─── */
+.ani{opacity:0;transform:translateY(28px);transition:opacity 0.75s cubic-bezier(0.16,1,0.3,1),transform 0.75s cubic-bezier(0.16,1,0.3,1);}
+.ani.fl{transform:translateX(-36px);}
+.ani.fr{transform:translateX(36px);}
+.ani.fs{transform:scale(0.94);}
 .ani.on{opacity:1!important;transform:none!important;}
-.d1{transition-delay:0.07s;}.d2{transition-delay:0.15s;}.d3{transition-delay:0.23s;}.d4{transition-delay:0.31s;}.d5{transition-delay:0.39s;}
+.d1{transition-delay:0.07s;}.d2{transition-delay:0.15s;}.d3{transition-delay:0.23s;}.d4{transition-delay:0.31s;}
 
-/* HERO */
-.hero{background:#060e1a;padding:5rem 2rem 4rem;position:relative;overflow:hidden;min-height:92vh;display:flex;align-items:center;}
-.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,0.18) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none;animation:gpulse 5s ease-in-out infinite;}
-.hero-glow2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(24,95,165,0.12) 0%,transparent 70%);bottom:-60px;left:0;pointer-events:none;animation:gpulse 6s ease-in-out infinite 1.5s;}
-.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
-@keyframes gpulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.1);opacity:0.7;}}
+/* ─── NAV ─── */
+nav{position:sticky;top:0;z-index:300;height:54px;background:rgba(11,31,58,0.96);backdrop-filter:blur(20px);display:flex;align-items:center;padding:0 2.5rem;gap:2rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{font-size:14px;font-weight:700;color:white;margin-right:auto;letter-spacing:-0.2px;}
+.nav-logo span{color:var(--teal);}
+nav a{font-size:12px;color:rgba(255,255,255,0.55);text-decoration:none;cursor:pointer;transition:color 0.2s;letter-spacing:0.3px;}
+nav a:hover{color:white;}
+.nav-cta{background:var(--teal);color:white!important;padding:6px 16px;border-radius:20px;font-weight:600;transition:background 0.2s!important;}
+.nav-cta:hover{background:var(--teal-d)!important;}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:6rem 2.5rem 4rem;position:relative;overflow:hidden;}
+.hero-bg-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(28,184,122,0.13) 0%,transparent 68%);top:-200px;right:-150px;pointer-events:none;animation:bgpulse 6s ease-in-out infinite;}
+.hero-bg-glow2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(26,107,191,0.09) 0%,transparent 68%);bottom:-150px;left:-100px;pointer-events:none;animation:bgpulse 7s ease-in-out infinite 2s;}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
+@keyframes bgpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+
 .hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;width:100%;}
-.hero-top{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;margin-bottom:3rem;}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(29,158,117,0.15);border:1px solid rgba(29,158,117,0.3);color:#5DCAA5;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:30px;margin-bottom:1.25rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s both;}
-.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:#5DCAA5;animation:blink 2s infinite;}
-@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.25;}}
-@keyframes hup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
-.hero h1{font-size:clamp(3rem,6vw,5rem);font-weight:800;letter-spacing:-2.5px;line-height:0.95;color:white;margin-bottom:1.25rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
-.hero h1 em{font-style:normal;background:linear-gradient(135deg,#5DCAA5,#1D9E75);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.6);max-width:480px;margin-bottom:2rem;line-height:1.7;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.42s both;}
-.hero-btns{display:flex;gap:0.85rem;flex-wrap:wrap;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.54s both;}
-.btn-p{background:var(--teal);color:white;border:none;padding:12px 26px;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block;letter-spacing:0.3px;}
-.btn-p:hover{background:var(--teal-m);transform:scale(1.04);}
-.btn-g{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.18);padding:12px 26px;border-radius:30px;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block;}
-.btn-g:hover{background:rgba(255,255,255,0.13);transform:scale(1.04);}
+.hero-available{display:inline-flex;align-items:center;gap:8px;background:rgba(28,184,122,0.12);border:1px solid rgba(28,184,122,0.28);color:#4dd9a0;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:30px;margin-bottom:1.5rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s both;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:#4dd9a0;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+@keyframes hup{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
 
-/* HERO AVATAR */
-.hero-avatar{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,var(--teal-m),#0a4a30);border:3px solid rgba(29,158,117,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s both;position:relative;}
-.hero-avatar-initials{font-size:3rem;font-weight:800;color:rgba(255,255,255,0.9);letter-spacing:-2px;}
-.hero-avatar::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(29,158,117,0.2);animation:ringpulse 3s ease-in-out infinite;}
-@keyframes ringpulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.05);opacity:0.5;}}
+.hero-name{font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:800;color:white;letter-spacing:-2.5px;line-height:1.0;margin-bottom:0.5rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.22s both;}
+.hero-title{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:600;color:var(--teal);letter-spacing:-0.5px;margin-bottom:1.25rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.34s both;}
+.hero-value{font-size:1rem;color:rgba(255,255,255,0.62);max-width:560px;line-height:1.75;margin-bottom:0.6rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.46s both;}
+.hero-value2{font-size:0.95rem;color:rgba(255,255,255,0.45);max-width:520px;line-height:1.7;margin-bottom:2.25rem;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.54s both;}
+.hero-btns{display:flex;gap:0.85rem;flex-wrap:wrap;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.62s both;}
+.hbtn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:30px;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:transform 0.15s,background 0.2s,border-color 0.2s;letter-spacing:0.2px;}
+.hbtn-primary{background:var(--teal);color:white;}
+.hbtn-primary:hover{background:var(--teal-d);transform:scale(1.04);}
+.hbtn-outline{background:transparent;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.2);}
+.hbtn-outline:hover{background:rgba(255,255,255,0.07);transform:scale(1.04);}
 
-/* STATS STRIP */
-.hero-stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:0.5px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.66s both;}
-.stat-box{padding:1.25rem 1.5rem;border-right:0.5px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);transition:background 0.3s;}
-.stat-box:last-child{border-right:none;}
-.stat-box:hover{background:rgba(29,158,117,0.1);}
-.stat-num{font-size:1.8rem;font-weight:800;color:#5DCAA5;display:block;letter-spacing:-1px;}
-.stat-label{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;line-height:1.4;}
+.hero-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.5rem;border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;animation:hup 0.9s cubic-bezier(0.16,1,0.3,1) 0.78s both;}
+.hm{padding:1.25rem 1.5rem;border-right:1px solid rgba(255,255,255,0.07);transition:background 0.3s;cursor:default;}
+.hm:last-child{border-right:none;}
+.hm:hover{background:rgba(28,184,122,0.08);}
+.hm-num{font-size:1.9rem;font-weight:800;color:var(--teal);letter-spacing:-1px;line-height:1;}
+.hm-label{font-size:11px;color:rgba(255,255,255,0.38);margin-top:4px;line-height:1.4;}
 
-.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:5px;color:rgba(255,255,255,0.2);font-size:10px;letter-spacing:2px;margin-top:2.5rem;animation:hup 1s 1.2s both;}
-.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.2),transparent);animation:sdrop 1.8s ease-in-out infinite;}
-@keyframes sdrop{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,0.18);font-size:10px;letter-spacing:2px;margin-top:3rem;animation:hup 1s 1.2s both;}
+.scroll-cue-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.18),transparent);animation:scdrop 1.8s ease-in-out infinite;}
+@keyframes scdrop{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
 
-/* SECTIONS */
-section{padding:5rem 2rem;}
-.inner{max-width:900px;margin:0 auto;}
-.s-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.4rem;}
-.s-title{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--navy);letter-spacing:-1px;margin-bottom:0.5rem;line-height:1.1;}
-.s-desc{color:var(--muted);font-size:15px;margin-bottom:2.5rem;line-height:1.7;}
+/* ─── SECTION SHELLS ─── */
+.sec{padding:5.5rem 2.5rem;}
+.sec-white{background:var(--white);}
+.sec-light{background:var(--light);}
+.sec-dark{background:var(--navy);position:relative;overflow:hidden;}
+.sec-dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%,rgba(28,184,122,0.06) 0%,transparent 55%),radial-gradient(ellipse at 80% 40%,rgba(26,107,191,0.04) 0%,transparent 55%);pointer-events:none;}
+.inner{max-width:920px;margin:0 auto;}
+.sec-eye{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:0.4rem;}
+.sec-title{font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:800;color:var(--navy);letter-spacing:-1.2px;line-height:1.08;margin-bottom:0.55rem;}
+.sec-desc{font-size:15px;color:var(--muted);margin-bottom:2.5rem;line-height:1.72;max-width:580px;}
+.sec-dark .sec-eye{color:#4dd9a0;}
+.sec-dark .sec-title{color:white;}
+.sec-dark .sec-desc{color:rgba(255,255,255,0.42);}
 
-/* ABOUT */
-#about{background:white;}
-.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.about-card{background:var(--bg);border-radius:16px;padding:1.4rem;border:0.5px solid var(--border);transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s;}
-.about-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.07);}
-.about-card-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:0.75rem;}
-.about-card h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:0.4rem;}
-.about-card p{font-size:13px;color:var(--muted);line-height:1.65;}
+/* ─── PROJECTS ─── */
+#projects{background:var(--light);}
+.proj-stack{display:flex;flex-direction:column;gap:2rem;}
 
-/* EXPERIENCE */
-#experience{background:var(--bg);}
-.exp-card{background:white;border-radius:16px;padding:1.5rem 1.75rem;border:0.5px solid var(--border);margin-bottom:1rem;position:relative;overflow:hidden;transition:transform 0.3s cubic-bezier(0.16,1,0.3,1),box-shadow 0.3s;}
-.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--teal),var(--teal-m));}
-.exp-card:hover{transform:translateX(5px);box-shadow:0 8px 28px rgba(0,0,0,0.06);}
-.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;}
-.exp-title{font-size:15px;font-weight:700;color:var(--navy);}
-.exp-company{font-size:13px;color:var(--teal);font-weight:600;margin:3px 0;}
-.exp-date{font-size:11px;background:var(--teal-l);color:var(--teal-m);padding:3px 11px;border-radius:20px;white-space:nowrap;font-weight:600;flex-shrink:0;}
-.exp-bullets{list-style:none;margin-top:0.6rem;}
-.exp-bullets li{font-size:13px;color:var(--muted);padding:3px 0 3px 1.1rem;position:relative;line-height:1.6;}
-.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--teal);font-size:11px;top:4px;}
+.pcard{background:var(--white);border-radius:20px;border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.3s,transform 0.3s;}
+.pcard:hover{box-shadow:0 20px 56px rgba(0,0,0,0.08);transform:translateY(-3px);}
+.pcard-accent{height:5px;}
+.ac-teal{background:linear-gradient(90deg,#0e8a58,#1cb87a,#4dd9a0);}
+.ac-amber{background:linear-gradient(90deg,#a06008,#c47d0e,#ef9f27);}
+.ac-blue{background:linear-gradient(90deg,#0e4fa0,#1a6bbf,#4a9ee0);}
 
-/* PROJECTS */
-#projects{background:white;}
-.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.pcard-body{padding:2rem;}
+.ptag{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;padding:3px 11px;border-radius:20px;display:inline-block;margin-bottom:0.8rem;}
+.pt-teal{background:var(--teal-l);color:var(--teal-d);}
+.pt-amber{background:var(--amber-l);color:var(--amber);}
+.pt-blue{background:var(--blue-l);color:var(--blue);}
+.pcard-title{font-size:1.3rem;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:0.3rem;}
+.pcard-hook{font-size:14px;color:var(--teal-d);font-weight:600;margin-bottom:1.5rem;font-style:italic;}
 
-.case-card{background:var(--bg);border-radius:18px;border:0.5px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s;}
-.case-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.1);}
-.case-banner{height:8px;}
-.banner-teal{background:linear-gradient(90deg,var(--teal),#5DCAA5);}
-.banner-amber{background:linear-gradient(90deg,var(--amber),#EF9F27);}
-.banner-blue{background:linear-gradient(90deg,var(--blue),#378ADD);}
-.case-inner{padding:1.4rem;flex:1;display:flex;flex-direction:column;}
-.case-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:0.7rem;}
-.tag-teal{background:var(--teal-l);color:var(--teal-m);}
-.tag-amber{background:var(--amber-l);color:var(--amber);}
-.tag-blue{background:var(--blue-l);color:var(--blue);}
-.case-inner h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:0.2rem;line-height:1.35;}
-.case-sub{font-size:12px;color:var(--muted);margin-bottom:0.85rem;}
-.case-inner p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:0.85rem;}
-.case-steps{display:flex;flex-direction:column;gap:6px;margin-bottom:0.85rem;flex:1;}
-.step{display:flex;gap:9px;align-items:flex-start;}
-.step-n{width:20px;height:20px;border-radius:50%;background:var(--teal-l);color:var(--teal-m);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.step-t{font-size:12px;color:var(--muted);line-height:1.5;}
-.case-metrics{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.85rem;}
-.mpill{font-size:11px;background:white;border:0.5px solid var(--border);color:var(--text);padding:3px 9px;border-radius:20px;display:inline-block;font-weight:500;}
-.case-footer{padding:0.85rem 1.4rem;border-top:0.5px solid var(--border);background:white;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;}
-.dl-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;text-decoration:none;padding:7px 15px;border-radius:20px;font-size:12px;font-weight:600;transition:background 0.2s;}
-.dl-btn:hover{background:#1a3a5c;}
-.tbadge{font-size:11px;background:var(--bg);border:0.5px solid var(--border);color:var(--muted);padding:2px 8px;border-radius:20px;}
+.pcard-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
+.pcard-grid.three{grid-template-columns:1fr 1fr 1fr;}
+.pblock{background:var(--light);border-radius:14px;padding:1.1rem 1.2rem;border:1px solid var(--border);}
+.pblock h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:0.5rem;}
+.pblock p{font-size:13px;color:var(--text);line-height:1.65;}
+.pblock.highlight{background:var(--teal-l);border-color:rgba(28,184,122,0.2);}
+.pblock.highlight h4{color:var(--teal-d);}
+.pblock.highlight p{color:#0a4f30;}
 
-/* CLV VS CAC VISUALISATION */
-.clv-vis{background:white;border-radius:18px;border:0.5px solid var(--border);overflow:hidden;grid-column:1/-1;}
-.clv-vis-header{background:linear-gradient(135deg,var(--navy) 0%,#1a3a5c 100%);padding:1.75rem 2rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:1.5rem;}
-.clv-vis-header h3{font-size:17px;font-weight:700;color:white;margin-bottom:0.25rem;}
-.clv-vis-header p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;}
-.clv-tag-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
-.clv-badge{background:rgba(29,158,117,0.2);border:1px solid rgba(29,158,117,0.4);color:#5DCAA5;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
-.clv-ratio{font-size:3rem;font-weight:900;color:#5DCAA5;letter-spacing:-2px;text-align:right;line-height:1;}
-.clv-ratio-label{font-size:11px;color:rgba(255,255,255,0.4);text-align:right;}
+.pcard-impact{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:14px;padding:1.25rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.pcard-impact-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:700;margin-bottom:4px;}
+.impact-stat{text-align:center;}
+.impact-num{font-size:1.6rem;font-weight:800;color:var(--teal);letter-spacing:-1px;}
+.impact-desc{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.impact-divider{width:1px;height:40px;background:rgba(255,255,255,0.1);}
 
-.clv-body{padding:1.75rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.clv-left{}
-.clv-chart-area{position:relative;height:200px;display:flex;align-items:flex-end;gap:24px;margin-bottom:1rem;}
-.bar-group{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;}
-.bar-wrap{width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:180px;}
-.bar{width:100%;border-radius:10px 10px 0 0;transition:height 1.4s cubic-bezier(0.16,1,0.3,1);position:relative;min-height:4px;cursor:pointer;}
-.bar-clv{background:linear-gradient(to top,var(--teal-m),var(--teal));height:0;}
-.bar-cac{background:linear-gradient(to top,#b03a1a,var(--coral));height:0;}
-.bar-tooltip{position:absolute;top:-36px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;}
-.bar:hover .bar-tooltip{opacity:1;}
-.bar-label{font-size:12px;color:var(--muted);font-weight:600;text-align:center;}
-.bar-value{font-size:13px;font-weight:800;color:var(--navy);}
-.chart-legend{display:flex;gap:1.25rem;margin-top:0.25rem;}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
-.legend-dot{width:10px;height:10px;border-radius:3px;}
-.clv-insights{display:flex;flex-direction:column;gap:0.75rem;}
-.insight-card{background:var(--bg);border-radius:12px;padding:1rem 1.1rem;border:0.5px solid var(--border);}
-.insight-card h4{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:0.3rem;}
-.insight-card p{font-size:12px;color:var(--muted);line-height:1.55;}
-.insight-card.highlight{border-color:rgba(29,158,117,0.3);background:var(--teal-l);}
-.insight-card.highlight h4{color:var(--teal-m);}
-.insight-steps{display:flex;flex-direction:column;gap:5px;margin-top:0.5rem;}
+/* CLV BAR CHART */
+.clv-chart-wrap{background:var(--light);border-radius:14px;padding:1.25rem;border:1px solid var(--border);margin-bottom:1rem;}
+.clv-bars{display:flex;align-items:flex-end;gap:20px;height:160px;padding-bottom:0;}
+.clv-bar-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;}
+.clv-bar-track{width:100%;display:flex;align-items:flex-end;height:140px;}
+.clv-bar{width:100%;border-radius:8px 8px 0 0;position:relative;transition:height 1.4s cubic-bezier(0.16,1,0.3,1);cursor:pointer;}
+.clv-bar-teal{background:linear-gradient(to top,var(--teal-d),var(--teal));height:0;}
+.clv-bar-coral{background:linear-gradient(to top,#8a2a14,var(--coral));height:0;}
+.clv-bar:hover::after{content:attr(data-tip);position:absolute;top:-38px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;white-space:nowrap;}
+.clv-bar-num{font-size:13px;font-weight:800;color:var(--navy);}
+.clv-bar-name{font-size:11px;color:var(--muted);text-align:center;line-height:1.4;}
+.clv-legend{display:flex;gap:1.25rem;margin-top:0.75rem;}
+.clv-leg-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
+.clv-leg-dot{width:10px;height:10px;border-radius:3px;}
 
-/* SEO WIDE CARD */
-.seo-card{background:var(--bg);border-radius:18px;border:0.5px solid var(--border);overflow:hidden;grid-column:1/-1;transition:transform 0.35s cubic-bezier(0.16,1,0.3,1),box-shadow 0.35s;}
-.seo-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08);}
-.seo-banner{height:8px;background:linear-gradient(90deg,var(--blue),#378ADD);}
-.seo-inner{display:grid;grid-template-columns:1.05fr 0.95fr;}
-.seo-left{padding:1.6rem;}
-.seo-right{padding:1.6rem;border-left:0.5px solid var(--border);background:white;}
-.chart-title{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:0.85rem;letter-spacing:0.3px;}
+/* SEO BARS */
 .kw-bar-wrap{margin-bottom:8px;}
 .kw-label{display:flex;justify-content:space-between;margin-bottom:3px;}
-.kw-name{font-size:11px;color:var(--muted);max-width:195px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.kw-name{font-size:11px;color:var(--muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .kw-vol{font-size:11px;font-weight:700;color:var(--navy);}
 .kw-track{background:rgba(0,0,0,0.06);border-radius:4px;height:7px;overflow:hidden;}
-.kw-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue),#378ADD);transition:width 1.3s cubic-bezier(0.16,1,0.3,1);width:0;}
-.cluster-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:0.5rem;}
-.cluster-chip{background:var(--bg);border:0.5px solid var(--border);border-radius:10px;padding:7px 10px;}
+.kw-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue),#4a9ee0);transition:width 1.3s cubic-bezier(0.16,1,0.3,1);width:0%;}
+
+.cluster-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:0.85rem;}
+.cluster-chip{background:var(--light);border:1px solid var(--border);border-radius:10px;padding:7px 10px;}
 .cluster-cn{font-size:10px;font-weight:700;color:var(--navy);}
 .cluster-cv{font-size:12px;color:var(--blue);font-weight:800;}
 
-/* SKILLS */
-#skills{background:#060e1a;position:relative;overflow:hidden;}
-#skills::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(29,158,117,0.08) 0%,transparent 50%),radial-gradient(ellipse at 85% 50%,rgba(24,95,165,0.06) 0%,transparent 50%);pointer-events:none;}
-#skills .s-eyebrow{color:#5DCAA5;}
-#skills .s-title{color:white;}
-#skills .s-desc{color:rgba(255,255,255,0.4);}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.85rem;margin-bottom:1.25rem;position:relative;z-index:1;}
-.skill-group{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.1rem;transition:background 0.3s,border-color 0.3s,transform 0.3s;}
-.skill-group:hover{background:rgba(255,255,255,0.07);border-color:rgba(29,158,117,0.3);transform:translateY(-3px);}
-.skill-group h3{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#5DCAA5;font-weight:700;margin-bottom:0.65rem;}
-.skill-tag{font-size:11px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.65);padding:3px 9px;border-radius:20px;display:inline-block;margin:2px;}
-.tools-row{display:flex;flex-wrap:wrap;gap:7px;position:relative;z-index:1;}
-.tool-chip{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.09);color:rgba(255,255,255,0.65);padding:7px 14px;border-radius:10px;font-size:12px;transition:background 0.2s,color 0.2s,border-color 0.2s;cursor:default;}
-.tool-chip:hover{background:rgba(29,158,117,0.15);border-color:rgba(29,158,117,0.35);color:#5DCAA5;}
+.pcard-links{display:flex;gap:0.75rem;flex-wrap:wrap;}
+.plink{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.plink-dark{background:var(--navy);color:white;}
+.plink-dark:hover{background:var(--navy2);}
+.plink-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
+.plink-ghost:hover{border-color:var(--teal);color:var(--teal-d);}
 
-/* EDUCATION */
-#education{background:var(--bg);}
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.edu-card{background:white;border-radius:16px;padding:1.4rem;border:0.5px solid var(--border);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1),box-shadow 0.3s;}
-.edu-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.06);}
-.edu-icon{font-size:24px;margin-bottom:0.6rem;}
-.edu-degree{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.edu-uni{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:3px;}
-.edu-year{font-size:12px;color:var(--muted);}
+/* ─── HOW I THINK ─── */
+#thinking{background:var(--navy);}
+.thinking-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;}
+.think-step{padding:1.6rem 1.25rem;border-right:1px solid rgba(255,255,255,0.07);position:relative;transition:background 0.3s;}
+.think-step:last-child{border-right:none;}
+.think-step:hover{background:rgba(28,184,122,0.07);}
+.think-num{font-size:2rem;font-weight:900;color:rgba(28,184,122,0.2);line-height:1;margin-bottom:0.65rem;letter-spacing:-1px;}
+.think-step h3{font-size:13px;font-weight:700;color:white;margin-bottom:0.4rem;line-height:1.3;}
+.think-step p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;}
 
-/* CONTACT */
-#contact{background:white;}
-.contact-box{background:linear-gradient(135deg,#060e1a 0%,#0f2a4a 55%,#0d3d2a 100%);border-radius:24px;padding:4rem 2rem;text-align:center;color:white;position:relative;overflow:hidden;}
-.contact-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(29,158,117,0.12) 0%,transparent 65%);}
-.contact-box::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background-image:radial-gradient(rgba(255,255,255,0.015) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
-.contact-box h2{font-size:2.2rem;font-weight:800;margin-bottom:0.6rem;letter-spacing:-1px;position:relative;}
-.contact-box p{color:rgba(255,255,255,0.5);margin-bottom:2rem;font-size:15px;position:relative;}
-.contact-links{display:flex;justify-content:center;gap:0.85rem;flex-wrap:wrap;position:relative;}
-.clink{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.15);color:white;text-decoration:none;padding:12px 22px;border-radius:30px;font-size:13px;font-weight:500;transition:all 0.2s;}
-.clink:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px);}
-.clink.primary{background:var(--teal);border-color:var(--teal);}
-.clink.primary:hover{background:var(--teal-m);}
+/* ─── EXPERIENCE ─── */
+.exp-list{display:flex;flex-direction:column;gap:1rem;}
+.exp-card{background:var(--white);border-radius:16px;padding:1.6rem 1.8rem;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform 0.3s cubic-bezier(0.16,1,0.3,1),box-shadow 0.3s;}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--teal),var(--teal-d));}
+.exp-card:hover{transform:translateX(5px);box-shadow:0 8px 28px rgba(0,0,0,0.06);}
+.exp-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.5rem;}
+.exp-title{font-size:15px;font-weight:700;color:var(--navy);}
+.exp-co{font-size:13px;color:var(--teal-d);font-weight:600;margin-top:2px;}
+.exp-date{font-size:11px;background:var(--teal-l);color:var(--teal-d);padding:3px 11px;border-radius:20px;font-weight:700;white-space:nowrap;flex-shrink:0;}
+.exp-bullets{list-style:none;margin-top:0.6rem;}
+.exp-bullets li{font-size:13px;color:var(--muted);padding:3px 0 3px 1.1rem;position:relative;line-height:1.6;}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--teal);font-size:11px;top:5px;}
 
-footer{background:#060e1a;color:rgba(255,255,255,0.2);text-align:center;padding:1.25rem;font-size:12px;}
+/* ─── SKILLS ─── */
+#skills{background:var(--light);}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;}
+.skill-cat{background:var(--white);border-radius:16px;padding:1.4rem;border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s;}
+.skill-cat:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.06);}
+.skill-cat-icon{font-size:22px;margin-bottom:0.65rem;}
+.skill-cat h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:0.65rem;}
+.stag{font-size:12px;background:var(--light);border:1px solid var(--border);color:var(--muted);padding:3px 10px;border-radius:20px;display:inline-block;margin:2px 2px 2px 0;}
 
-@media(max-width:660px){
-  .about-layout,.edu-grid,.proj-grid{grid-template-columns:1fr;}
-  .seo-inner{grid-template-columns:1fr;}
-  .seo-right{border-left:none;border-top:0.5px solid var(--border);}
-  .clv-body{grid-template-columns:1fr;}
-  .clv-vis-header{grid-template-columns:1fr;}
-  .hero-top{grid-template-columns:1fr;}
-  .hero-stats-strip{grid-template-columns:1fr 1fr;}
-  .hero-avatar{display:none;}
-  .clv-vis,.seo-card{grid-column:auto;}
+/* ─── MINI CASE STUDY ─── */
+#casestudy{background:var(--white);}
+.cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.mini-card{border-radius:18px;border:1px solid var(--border);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+.mini-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08);}
+.mini-card-top{padding:1.5rem;background:var(--light);}
+.mini-card-top h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:0.25rem;}
+.mini-card-top .sub{font-size:12px;color:var(--muted);margin-bottom:1rem;}
+.mini-rows{display:flex;flex-direction:column;gap:0.6rem;}
+.mini-row{display:flex;gap:0.75rem;align-items:flex-start;}
+.mini-row-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--teal-d);min-width:95px;padding-top:2px;flex-shrink:0;}
+.mini-row-val{font-size:13px;color:var(--muted);line-height:1.55;}
+.mini-card-bottom{padding:1rem 1.5rem;background:var(--white);border-top:1px solid var(--border);}
+.mini-outcome{display:flex;align-items:center;gap:0.75rem;}
+.mini-outcome-num{font-size:1.5rem;font-weight:800;color:var(--teal-d);letter-spacing:-0.5px;}
+.mini-outcome-desc{font-size:12px;color:var(--muted);line-height:1.4;}
+
+/* ─── ABOUT ─── */
+#about{background:var(--light);}
+.about-wrap{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:start;}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:1rem;}
+.about-text p:last-child{margin-bottom:0;}
+.about-aside{width:240px;}
+.aside-card{background:var(--white);border-radius:16px;padding:1.25rem;border:1px solid var(--border);margin-bottom:1rem;}
+.aside-card h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:0.5rem;}
+.aside-card p{font-size:13px;color:var(--text);line-height:1.6;}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--navy);}
+.contact-inner{text-align:center;max-width:600px;margin:0 auto;}
+.contact-inner h2{font-size:2.4rem;font-weight:800;color:white;letter-spacing:-1px;margin-bottom:0.6rem;}
+.contact-inner p{color:rgba(255,255,255,0.45);font-size:15px;margin-bottom:2rem;line-height:1.7;}
+.contact-links{display:flex;justify-content:center;gap:0.85rem;flex-wrap:wrap;}
+.clink{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.clink-primary{background:var(--teal);color:white;}
+.clink-primary:hover{background:var(--teal-d);transform:translateY(-2px);}
+.clink-outline{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);}
+.clink-outline:hover{background:rgba(255,255,255,0.13);transform:translateY(-2px);}
+
+footer{background:#060d18;color:rgba(255,255,255,0.18);text-align:center;padding:1.25rem;font-size:12px;}
+
+@media(max-width:700px){
+  .hero-metrics{grid-template-columns:1fr 1fr;}
+  .pcard-grid,.pcard-grid.three,.thinking-grid,.skills-layout,.cases-grid,.about-wrap{grid-template-columns:1fr;}
+  .about-aside{width:100%;}
+  .think-step{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);}
+  nav a:not(.nav-cta){display:none;}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <span class="nav-logo">Bhavya Kaushal</span>
-  <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
-  <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
-  <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</a>
-  <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a>
-  <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
+  <span class="nav-logo">Bhavya <span>Kaushal</span></span>
+  <a onclick="s('projects')">Projects</a>
+  <a onclick="s('thinking')">How I Think</a>
+  <a onclick="s('experience')">Experience</a>
+  <a onclick="s('skills')">Skills</a>
+  <a onclick="s('about')">About</a>
+  <a class="nav-cta" onclick="s('contact')">Contact</a>
 </nav>
 
+<!-- ① HERO -->
 <div class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
-  <div class="hero-grid-lines"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
+  <div class="hero-dots"></div>
   <div class="hero-inner">
-    <div class="hero-top">
-      <div>
-        <div class="eyebrow">MBA Marketing · RMIT University · Melbourne</div>
-        <h1>Bhavya<br><em>Kaushal</em></h1>
-        <p class="hero-sub">Marketing strategist with 2+ years of leadership experience in retail operations, SEO, and data-driven growth. I turn insights into measurable business outcomes.</p>
-        <div class="hero-btns">
-          <a class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</a>
-          <a class="btn-g" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See my work ↓</a>
-        </div>
-      </div>
-      <div class="hero-avatar">
-        <span class="hero-avatar-initials">BK</span>
-      </div>
+    <div class="hero-available">
+      <div class="hero-dot"></div>
+      Open to opportunities in Australia
     </div>
-    <div class="hero-stats-strip">
-      <div class="stat-box"><span class="stat-num">20%</span><span class="stat-label">Inventory discrepancy reduction</span></div>
-      <div class="stat-box"><span class="stat-num">15%</span><span class="stat-label">Sales uplift in 6 months</span></div>
-      <div class="stat-box"><span class="stat-num">18:1</span><span class="stat-label">CLV to CAC ratio delivered</span></div>
-      <div class="stat-box"><span class="stat-num">12+</span><span class="stat-label">Suppliers managed</span></div>
+    <div class="hero-name">Bhavya Kaushal</div>
+    <div class="hero-title">Marketing and Growth Analyst</div>
+    <p class="hero-value">I use data to solve marketing and growth problems — from customer segmentation to campaign ROI and SEO strategy.</p>
+    <p class="hero-value2">Experience across retail operations, consulting projects, and digital analytics with a focus on turning insights into business decisions.</p>
+    <div class="hero-btns">
+      <a class="hbtn hbtn-primary" onclick="s('projects')">View Projects ↓</a>
+      <a class="hbtn hbtn-outline" href="alinta_consulting.pdf" download>Download Resume</a>
+      <a class="hbtn hbtn-outline" href="https://linkedin.com/in/bhavya-kaushal-123088123" target="_blank">LinkedIn ↗</a>
     </div>
-    <div class="scroll-hint"><div class="scroll-line"></div>SCROLL</div>
+    <div class="hero-metrics">
+      <div class="hm"><div class="hm-num">18:1</div><div class="hm-label">CLV to CAC ratio delivered</div></div>
+      <div class="hm"><div class="hm-num">20%</div><div class="hm-label">Inventory discrepancy reduction</div></div>
+      <div class="hm"><div class="hm-num">96.1%</div><div class="hm-label">Retention rate achieved</div></div>
+      <div class="hm"><div class="hm-num">35k</div><div class="hm-label">Monthly keyword volume mapped</div></div>
+    </div>
+    <div class="scroll-cue"><div class="scroll-cue-line"></div>SCROLL</div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- ② FEATURED PROJECTS -->
+<section class="sec sec-light" id="projects">
   <div class="inner">
-    <div class="s-eyebrow ani">About me</div>
-    <div class="s-title ani d1">Analytical thinker.<br>Hands-on executor.</div>
-    <p class="s-desc ani d2">MBA graduate with experience spanning retail leadership, digital marketing, and strategic consulting. Currently seeking entry-level roles in marketing, growth, or consulting across Australia.</p>
-    <div class="about-layout">
-      <div class="about-card ani from-left d1">
-        <div class="about-card-icon" style="background:#E1F5EE;">🎓</div>
-        <h3>Academic background</h3>
-        <p>MBA (Marketing) from RMIT University, building on a foundation in data-backed decision making, customer journey mapping, and digital strategy. My coursework involved real client consulting projects, not just theory.</p>
+    <div class="sec-eye ani">Featured Projects</div>
+    <div class="sec-title ani d1">Proof of thinking.</div>
+    <p class="sec-desc ani d2">Three projects showing how I define problems, analyse data, draw insights, and make recommendations.</p>
+
+    <div class="proj-stack">
+
+      <!-- PROJECT 1: ALINTA ENERGY -->
+      <div class="pcard ani d2">
+        <div class="pcard-accent ac-teal"></div>
+        <div class="pcard-body">
+          <span class="ptag pt-teal">Client Consulting</span>
+          <div class="pcard-title">Alinta Energy — Customer Profitability and Bill-Shock Strategy</div>
+          <div class="pcard-hook">"Analysed customer lifetime value against acquisition cost to prove Alinta was under-leveraging its highest-value customers."</div>
+
+          <div class="pcard-grid">
+            <div class="pblock">
+              <h4>Problem</h4>
+              <p>Alinta Energy was receiving complaints about unexpected bill spikes and needed a strategy to reduce financial hardship for customers while navigating the transition to renewable energy. The challenge was twofold: reactive customer support and no predictive billing mechanism.</p>
+            </div>
+            <div class="pblock">
+              <h4>Approach</h4>
+              <p>Conducted primary research through customer surveys and applied STEEPLE and SWOT frameworks to map the external environment. Built a five-stage customer journey map for the persona "Sakshi" and calculated a CLV versus CAC ratio to assess customer profitability.</p>
+            </div>
+            <div class="pblock">
+              <h4>Key Insights</h4>
+              <p>73% of surveyed customers reported experiencing bill-shock. The CLV to CAC ratio of 18:1 revealed that Alinta was generating significant value per customer but failing to protect that relationship through proactive engagement. Sakshi's journey showed clear anxiety at the billing stage with no actionable tools to manage usage.</p>
+            </div>
+            <div class="pblock highlight">
+              <h4>Recommendations</h4>
+              <p>Proposed three strategic pillars: a real-time consumption awareness tool, a tenure-based loyalty and rewards program, and targeted customer engagement at high-risk billing moments. Reframed the core problem toward predictive billing rather than reactive support.</p>
+            </div>
+          </div>
+
+          <!-- CLV vs CAC VISUAL -->
+          <div class="clv-chart-wrap">
+            <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:0.85rem;letter-spacing:0.3px;">CLV vs CAC — interactive chart</div>
+            <div class="clv-bars">
+              <div class="clv-bar-col">
+                <div class="clv-bar-track">
+                  <div class="clv-bar clv-bar-teal" id="bar-clv" data-tip="CLV: $1,800"></div>
+                </div>
+                <div class="clv-bar-num" id="clv-val">$0</div>
+                <div class="clv-bar-name">Customer<br>Lifetime Value</div>
+              </div>
+              <div class="clv-bar-col">
+                <div class="clv-bar-track">
+                  <div class="clv-bar clv-bar-coral" id="bar-cac" data-tip="CAC: $100"></div>
+                </div>
+                <div class="clv-bar-num" id="cac-val">$0</div>
+                <div class="clv-bar-name">Customer<br>Acquisition Cost</div>
+              </div>
+            </div>
+            <div class="clv-legend">
+              <div class="clv-leg-item"><div class="clv-leg-dot" style="background:var(--teal);"></div>CLV (Customer Lifetime Value)</div>
+              <div class="clv-leg-item"><div class="clv-leg-dot" style="background:var(--coral);"></div>CAC (Customer Acquisition Cost)</div>
+            </div>
+          </div>
+
+          <div class="pcard-impact">
+            <div>
+              <div class="pcard-impact-label">Estimated Impact</div>
+            </div>
+            <div class="impact-stat"><div class="impact-num">18:1</div><div class="impact-desc">CLV to CAC ratio<br>identified</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">73%</div><div class="impact-desc">of customers<br>experiencing bill-shock</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">~15%</div><div class="impact-desc">Projected CAC reduction<br>via loyalty program</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">3</div><div class="impact-desc">Strategic pillars<br>delivered to client</div></div>
+          </div>
+
+          <div class="pcard-links">
+            <a class="plink plink-dark" href="alinta_consulting.pdf" download>↓ Download Full Deck</a>
+            <a class="plink plink-ghost" href="https://linkedin.com/in/bhavya-kaushal-123088123" target="_blank">View LinkedIn ↗</a>
+          </div>
+        </div>
       </div>
-      <div class="about-card ani from-right d2">
-        <div class="about-card-icon" style="background:#E6F1FB;">📊</div>
-        <h3>What I bring</h3>
-        <p>I blend analytical rigour with operational execution. Whether building SEO strategies from keyword research, running A/B tests, or presenting data-backed recommendations to senior stakeholders, I focus on outcomes that can be measured.</p>
+
+      <!-- PROJECT 2: EXERCISEMINDER -->
+      <div class="pcard ani d2">
+        <div class="pcard-accent ac-amber"></div>
+        <div class="pcard-body">
+          <span class="ptag pt-amber">Marketing Analytics Simulation</span>
+          <div class="pcard-title">ExerciseMinder — 9-Year Campaign ROI and Retention Simulation</div>
+          <div class="pcard-hook">"Managed a $2M+ annual marketing budget across 9 simulated years, using regression analysis and A/B testing to achieve a ROMI of 2.27."</div>
+
+          <div class="pcard-grid three">
+            <div class="pblock">
+              <h4>Problem</h4>
+              <p>A fitness app needed to grow its user base while maintaining profitability. The challenge was balancing spend on acquisition versus retention as competition increased each year.</p>
+            </div>
+            <div class="pblock">
+              <h4>Approach</h4>
+              <p>Used regression analysis to identify the highest-performing channels each year. Ran A/B tests on messaging and offer types. Tracked customer cohorts and adjusted channel mix based on churn signals.</p>
+            </div>
+            <div class="pblock highlight">
+              <h4>Key Insights</h4>
+              <p>Email marketing and gamification-based engagement significantly outperformed paid acquisition channels in years 5 to 9. Retention-focused spend delivered 3x the ROI of new acquisition spend in the final three years.</p>
+            </div>
+          </div>
+
+          <div class="pcard-grid">
+            <div class="pblock">
+              <h4>Recommendations</h4>
+              <p>Shift budget allocation from broad acquisition to segmented retention campaigns earlier in the product lifecycle. Introduce gamification mechanics at the 90-day mark to reduce the highest-risk churn window. Use email as the primary retention channel rather than paid social.</p>
+            </div>
+            <div class="pblock">
+              <h4>What I Would Do Next</h4>
+              <p>Build a customer segmentation model using RFM (Recency, Frequency, Monetary) scoring to identify high-value cohorts and personalise retention offers. Connect campaign performance to lifetime value by segment, not just channel.</p>
+            </div>
+          </div>
+
+          <div class="pcard-impact">
+            <div>
+              <div class="pcard-impact-label">Simulation Outcomes</div>
+            </div>
+            <div class="impact-stat"><div class="impact-num">2.27</div><div class="impact-desc">Return on Marketing<br>Investment (ROMI)</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">96.1%</div><div class="impact-desc">Retention rate<br>by year 9</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">3x</div><div class="impact-desc">ROI from retention<br>vs acquisition spend</div></div>
+          </div>
+
+          <div class="pcard-links">
+            <a class="plink plink-ghost" onclick="s('casestudy')">View Mini Case Study ↓</a>
+          </div>
+        </div>
       </div>
-      <div class="about-card ani from-left d3">
-        <div class="about-card-icon" style="background:#FAEEDA;">🎯</div>
-        <h3>Focus areas</h3>
-        <p>Marketing strategy, SEO and content growth, customer experience design, business consulting, data-driven campaign planning and execution.</p>
+
+      <!-- PROJECT 3: SEO -->
+      <div class="pcard ani d3">
+        <div class="pcard-accent ac-blue"></div>
+        <div class="pcard-body">
+          <span class="ptag pt-blue">SEO Strategy</span>
+          <div class="pcard-title">Low Cholesterol Diet — Keyword Research and Content Architecture</div>
+          <div class="pcard-hook">"Mapped 60+ keywords across 6 intent-based clusters to design a full content pillar strategy for a health client."</div>
+
+          <div class="pcard-grid">
+            <div class="pblock">
+              <h4>Problem</h4>
+              <p>A health content client needed to grow organic traffic in a competitive niche. The site lacked a structured keyword architecture, meaning content was not aligned to how users actually search across different stages of intent.</p>
+            </div>
+            <div class="pblock">
+              <h4>Approach</h4>
+              <p>Used Ahrefs and SEMrush to map primary and secondary keywords by search intent. Grouped keywords into six thematic clusters covering core variations, food-focused, time-based, general, and FAQ intent. Designed a pillar-plus-supporting-page content structure.</p>
+            </div>
+            <div class="pblock">
+              <h4>Key Insights</h4>
+              <p>Time-based queries (e.g. "how to reduce cholesterol in 7 days") carried the highest combined volume at 51,000 searches per month and lowest competition. FAQ-intent keywords were underserved across competitor sites, representing a gap for featured snippet capture.</p>
+            </div>
+            <div class="pblock highlight">
+              <h4>Recommendations</h4>
+              <p>Publish a primary pillar page targeting "low cholesterol diet" (35,000 per month) supported by cluster pages for each intent group. Prioritise time-based and FAQ clusters first. Build internal linking from cluster pages to the pillar to consolidate authority.</p>
+            </div>
+          </div>
+
+          <!-- SEO KEYWORD CHART -->
+          <div style="background:var(--light);border-radius:14px;padding:1.25rem;border:1px solid var(--border);margin-bottom:1.25rem;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:0.85rem;">Top keywords by monthly volume (USA)</div>
+                <div id="kw-bars"></div>
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:0.85rem;">Keyword cluster overview</div>
+                <div class="cluster-grid" id="clusters"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pcard-impact">
+            <div>
+              <div class="pcard-impact-label">Estimated Impact</div>
+            </div>
+            <div class="impact-stat"><div class="impact-num">60+</div><div class="impact-desc">Keywords mapped<br>and clustered</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">6</div><div class="impact-desc">Intent-based<br>content clusters</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">51k</div><div class="impact-desc">Monthly volume in<br>top priority cluster</div></div>
+            <div class="impact-divider"></div>
+            <div class="impact-stat"><div class="impact-num">~30%</div><div class="impact-desc">Projected organic<br>traffic increase</div></div>
+          </div>
+
+          <div class="pcard-links">
+            <a class="plink plink-ghost" href="https://linkedin.com/in/bhavya-kaushal-123088123" target="_blank">View LinkedIn ↗</a>
+          </div>
+        </div>
       </div>
-      <div class="about-card ani from-right d4">
-        <div class="about-card-icon" style="background:#FAECE7;">📍</div>
-        <h3>Location</h3>
-        <p>Based in Melbourne, Victoria. Open to roles across Australia, including remote and hybrid opportunities.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ③ HOW I THINK -->
+<section class="sec sec-dark" id="thinking">
+  <div class="inner">
+    <div class="sec-eye ani">My Process</div>
+    <div class="sec-title ani d1">How I approach marketing problems</div>
+    <p class="sec-desc ani d2">Most candidates describe what they did. This is how I think through a problem before doing anything.</p>
+    <div class="thinking-grid ani d2">
+      <div class="think-step">
+        <div class="think-num">01</div>
+        <h3>Define the problem clearly</h3>
+        <p>Separate the symptom from the root cause. A drop in sales is not the problem — it is the signal. The problem is why.</p>
+      </div>
+      <div class="think-step">
+        <div class="think-num">02</div>
+        <h3>Analyse customer and data</h3>
+        <p>Look at who is buying, who is leaving, and who is not converting. Segment before you generalise.</p>
+      </div>
+      <div class="think-step">
+        <div class="think-num">03</div>
+        <h3>Identify key drivers</h3>
+        <p>Use regression, cohort analysis, or keyword data to isolate which variables actually move the outcome.</p>
+      </div>
+      <div class="think-step">
+        <div class="think-num">04</div>
+        <h3>Prioritise high-impact actions</h3>
+        <p>Not everything is worth doing. Rank recommendations by effort versus estimated return and be explicit about trade-offs.</p>
+      </div>
+      <div class="think-step">
+        <div class="think-num">05</div>
+        <h3>Measure and iterate</h3>
+        <p>Define what success looks like before you start. Set a metric, run the test, read the results honestly, and adjust.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
+<!-- ④ EXPERIENCE -->
+<section class="sec sec-white" id="experience">
   <div class="inner">
-    <div class="s-eyebrow ani">Experience</div>
-    <div class="s-title ani d1">Where I have made an impact</div>
-    <p class="s-desc ani d2">From retail leadership to live digital marketing work, here is what I have delivered.</p>
+    <div class="sec-eye ani">Experience</div>
+    <div class="sec-title ani d1">Where I have made an impact</div>
+    <p class="sec-desc ani d2">Impact focused, not responsibility focused.</p>
+    <div class="exp-list">
 
-    <div class="exp-card ani d2">
-      <div class="exp-header">
-        <div>
-          <div class="exp-title">SEO and Marketing Intern — Client Strategy</div>
-          <div class="exp-company">ECPL (Education Culture Pvt Ltd) · Remote</div>
-        </div>
-        <span class="exp-date">Feb 2026 – Present</span>
-      </div>
-      <ul class="exp-bullets">
-        <li>Conducted keyword research, competitor scans, and on-page recommendations for client websites</li>
-        <li>Built full SEO strategies including site structure suggestions, content clusters, and internal linking plans aligned to search intent</li>
-        <li>Created content briefs and page recommendations using Ahrefs and SEMrush keyword data</li>
-        <li>Tracked priority keyword rankings and iterated recommendations based on SERP changes</li>
-      </ul>
-    </div>
-
-    <div class="exp-card ani d3">
-      <div class="exp-header">
-        <div>
-          <div class="exp-title">Media Search Analyst</div>
-          <div class="exp-company">TELUS International AI · Remote</div>
-        </div>
-        <span class="exp-date">Mar 2026 – Present</span>
-      </div>
-      <ul class="exp-bullets">
-        <li>Evaluated search results and media content for relevance, intent alignment, and content quality</li>
-        <li>Applied detailed evaluation guidelines to maintain accuracy and consistency across digital content reviews</li>
-        <li>Identified mismatches in search suggestions and content outputs to improve user experience</li>
-      </ul>
-    </div>
-
-    <div class="exp-card ani d4">
-      <div class="exp-header">
-        <div>
-          <div class="exp-title">Assistant Retail Manager — Marketing and Operations</div>
-          <div class="exp-company">FoodWorks · South Wharf, Melbourne</div>
-        </div>
-        <span class="exp-date">Jul 2023 – Dec 2025</span>
-      </div>
-      <ul class="exp-bullets">
-        <li>Reduced stock discrepancies by approximately 20% across 1,000+ SKUs through tighter supplier coordination and weekly variance audits</li>
-        <li>Curated and executed monthly merchandising plans tailored to local demand, delivering a 15% uplift in high-margin category sales over six months</li>
-        <li>Managed 12+ supplier relationships, renegotiating delivery schedules and order quantities to cut overstocking by 30%</li>
-        <li>Analysed sales performance and customer preferences to inform category-focused promotions and in-store displays</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="inner">
-    <div class="s-eyebrow ani">Projects</div>
-    <div class="s-title ani d1">Real work. Real outcomes.</div>
-    <p class="s-desc ani d2">Case studies from live consulting engagements, marketing simulations, and SEO strategy work.</p>
-
-    <div class="proj-grid">
-
-      <!-- ALINTA ENERGY with CLV/CAC VISUAL -->
-      <div class="clv-vis ani d2" style="grid-column:1/-1;">
-        <div class="clv-vis-header">
+      <div class="exp-card ani d2">
+        <div class="exp-row">
           <div>
-            <span style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(29,158,117,0.8);font-weight:700;display:block;margin-bottom:0.4rem;">Client Consulting · RMIT MBA Project</span>
-            <h3>Alinta Energy — Customer Profitability and Bill-Shock Strategy</h3>
-            <p>A full 19-slide consulting proposal for Alinta Energy covering bill-shock reduction and the energy transition. Delivered by PeakEdge Consulting (RMIT team), the project included primary research, STEEPLE and SWOT analysis, customer journey mapping, and a CLV versus CAC framework that was acknowledged by an Alinta executive as a key performance insight.</p>
+            <div class="exp-title">SEO and Marketing Intern — Client Strategy</div>
+            <div class="exp-co">ECPL (Education Culture Pvt Ltd) · Remote</div>
           </div>
-          <div class="clv-tag-wrap">
-            <span class="clv-badge">Key finding</span>
-            <div class="clv-ratio">18:1</div>
-            <div class="clv-ratio-label">CLV to CAC ratio</div>
+          <span class="exp-date">Feb 2026 – Present</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built keyword architectures and content cluster strategies for client websites using Ahrefs and SEMrush</li>
+          <li>Produced content briefs aligned to search intent at each stage of the funnel</li>
+          <li>Tracked keyword ranking movements and updated recommendations based on SERP changes</li>
+          <li>Delivered on-page SEO audits with prioritised action lists for client implementation</li>
+        </ul>
+      </div>
+
+      <div class="exp-card ani d3">
+        <div class="exp-row">
+          <div>
+            <div class="exp-title">Media Search Analyst</div>
+            <div class="exp-co">TELUS International AI · Remote</div>
+          </div>
+          <span class="exp-date">Mar 2026 – Present</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Evaluated search results and media content for relevance, intent alignment, and quality accuracy</li>
+          <li>Maintained high accuracy scores across digital content reviews under productivity targets</li>
+          <li>Identified patterns in search suggestion mismatches to support quality improvement</li>
+        </ul>
+      </div>
+
+      <div class="exp-card ani d4">
+        <div class="exp-row">
+          <div>
+            <div class="exp-title">Assistant Retail Manager — Marketing and Operations</div>
+            <div class="exp-co">FoodWorks · South Wharf, Melbourne</div>
+          </div>
+          <span class="exp-date">Jul 2023 – Dec 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Reduced stock discrepancies by approximately 20% across 1,000+ SKUs using weekly variance audits and tighter supplier coordination</li>
+          <li>Increased high-margin category sales by 15% through targeted monthly merchandising plans</li>
+          <li>Cut overstocking by 30% by renegotiating supplier delivery schedules and minimum order quantities</li>
+          <li>Analysed sales data and customer preferences to inform in-store promotions and category decisions</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ SKILLS -->
+<section class="sec sec-light" id="skills">
+  <div class="inner">
+    <div class="sec-eye ani">Skills</div>
+    <div class="sec-title ani d1">What I work with</div>
+    <p class="sec-desc ani d2">Grouped by how they are actually used, not listed for the sake of it.</p>
+    <div class="skills-layout">
+      <div class="skill-cat ani fl d1">
+        <div class="skill-cat-icon">📈</div>
+        <h3>Marketing and Strategy</h3>
+        <span class="stag">Customer segmentation</span>
+        <span class="stag">GTM strategy</span>
+        <span class="stag">Campaign planning</span>
+        <span class="stag">SEO strategy</span>
+        <span class="stag">Content clustering</span>
+        <span class="stag">Customer journey mapping</span>
+        <span class="stag">Brand strategy</span>
+        <span class="stag">Market research</span>
+      </div>
+      <div class="skill-cat ani d2">
+        <div class="skill-cat-icon">🔢</div>
+        <h3>Analytics</h3>
+        <span class="stag">Excel (Advanced)</span>
+        <span class="stag">Tableau</span>
+        <span class="stag">Data analysis</span>
+        <span class="stag">A/B testing</span>
+        <span class="stag">CLV/CAC modelling</span>
+        <span class="stag">Regression analysis</span>
+        <span class="stag">Cohort analysis</span>
+        <span class="stag">ROMI calculation</span>
+      </div>
+      <div class="skill-cat ani fr d3">
+        <div class="skill-cat-icon">🛠</div>
+        <h3>Tools</h3>
+        <span class="stag">Google Analytics</span>
+        <span class="stag">Ahrefs</span>
+        <span class="stag">SEMrush</span>
+        <span class="stag">HubSpot</span>
+        <span class="stag">Mailchimp</span>
+        <span class="stag">Canva</span>
+        <span class="stag">PowerPoint</span>
+        <span class="stag">Google Workspace</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ MINI CASE STUDIES -->
+<section class="sec sec-white" id="casestudy">
+  <div class="inner">
+    <div class="sec-eye ani">Case Studies</div>
+    <div class="sec-title ani d1">More depth on two projects</div>
+    <p class="sec-desc ani d2">Shorter format. Same structured thinking.</p>
+    <div class="cases-grid">
+
+      <div class="mini-card ani fl d2">
+        <div class="mini-card-top">
+          <span class="ptag pt-teal" style="margin-bottom:0.6rem;">Consulting</span>
+          <h3>Alinta Energy — Predictive Billing Strategy</h3>
+          <div class="sub">PeakEdge Consulting · RMIT MBA</div>
+          <div class="mini-rows">
+            <div class="mini-row"><div class="mini-row-label">Problem</div><div class="mini-row-val">Customers experiencing unexpected bill spikes with no tools to predict or manage usage.</div></div>
+            <div class="mini-row"><div class="mini-row-label">What I did</div><div class="mini-row-val">Ran primary research, mapped the customer journey, and calculated CLV versus CAC to assess customer profitability.</div></div>
+            <div class="mini-row"><div class="mini-row-label">Insight</div><div class="mini-row-val">An 18:1 CLV to CAC ratio showed Alinta was under-protecting its most valuable customer relationships.</div></div>
+            <div class="mini-row"><div class="mini-row-label">Outcome</div><div class="mini-row-val">Proposed predictive billing tools and a loyalty program. The CLV finding was acknowledged by an Alinta executive as a key performance insight.</div></div>
           </div>
         </div>
-        <div class="clv-body">
-          <div class="clv-left">
-            <div class="chart-title">CLV vs CAC — Alinta Energy (interactive)</div>
-            <div class="clv-chart-area" id="clv-chart">
-              <div class="bar-group">
-                <div class="bar-wrap">
-                  <div class="bar bar-clv" id="bar-clv" data-h="90" style="position:relative;">
-                    <div class="bar-tooltip">CLV: $1,800</div>
-                  </div>
-                </div>
-                <div class="bar-value" id="clv-val">$0</div>
-                <div class="bar-label">Customer<br>Lifetime Value</div>
-              </div>
-              <div class="bar-group">
-                <div class="bar-wrap">
-                  <div class="bar bar-cac" id="bar-cac" data-h="5" style="position:relative;">
-                    <div class="bar-tooltip">CAC: $100</div>
-                  </div>
-                </div>
-                <div class="bar-value" id="cac-val">$0</div>
-                <div class="bar-label">Customer<br>Acquisition Cost</div>
-              </div>
-            </div>
-            <div class="chart-legend">
-              <div class="legend-item"><div class="legend-dot" style="background:var(--teal);"></div> CLV (Customer Lifetime Value)</div>
-              <div class="legend-item"><div class="legend-dot" style="background:var(--coral);"></div> CAC (Customer Acquisition Cost)</div>
-            </div>
-            <p style="font-size:12px;color:var(--muted);margin-top:0.85rem;line-height:1.6;">An 18:1 CLV to CAC ratio indicates that for every dollar Alinta spends acquiring a customer, it generates $18 in lifetime value. This signals highly efficient acquisition and a strong return on investment — a finding presented directly to the Alinta Energy executive team.</p>
-          </div>
-          <div class="clv-insights">
-            <div class="insight-card highlight">
-              <h4>Primary research finding</h4>
-              <p>73% of surveyed customers reported experiencing bill-shock. This was the central trigger for reframing the problem toward predictive billing rather than reactive support.</p>
-            </div>
-            <div class="insight-card">
-              <h4>Customer journey — Sakshi</h4>
-              <p>Built a detailed five-stage journey map (Awareness → Consideration → Decision → Service → Loyalty) for the persona "Sakshi," uncovering anxiety around unexpected bills and a lack of actionable usage tools.</p>
-            </div>
-            <div class="insight-card">
-              <h4>Reframed problem statement</h4>
-              <p>"How might we leverage technology to help customers avoid bill-shock and create tailored solutions that match their energy usage patterns with predictable billing options?"</p>
-            </div>
-            <div class="insight-card">
-              <h4>Strategic recommendations</h4>
-              <p>Proposed a three-pillar deliverable: a consumption-awareness tool, a rewards-based loyalty program, and enhanced customer engagement touchpoints — all tied to a 12-month Gantt plan.</p>
-            </div>
-            <div style="padding-top:0.5rem;">
-              <a class="dl-btn" href="alinta_consulting.pdf" download>↓ Download Full Consulting Deck</a>
-            </div>
+        <div class="mini-card-bottom">
+          <div class="mini-outcome">
+            <div class="mini-outcome-num">18:1</div>
+            <div class="mini-outcome-desc">CLV to CAC ratio surfaced.<br>Acknowledged by client executive.</div>
           </div>
         </div>
       </div>
 
-      <!-- EXERCISEMINDER -->
-      <div class="case-card ani from-left d3">
-        <div class="case-banner banner-amber"></div>
-        <div class="case-inner">
-          <span class="case-tag tag-amber">Marketing Simulation</span>
-          <h3>ExerciseMinder — 9-Year Marketing Strategy Simulation</h3>
-          <div class="case-sub">Strategic Marketing · RMIT University</div>
-          <p>Led a 9-year marketing simulation for a fitness app, making live budget, channel, and campaign decisions each simulated year. The goal was to balance customer acquisition cost against retention to maximise long-term return on marketing investment.</p>
-          <div class="case-steps">
-            <div class="step"><div class="step-n">1</div><div class="step-t">Used regression analysis to identify highest-performing acquisition channels by year</div></div>
-            <div class="step"><div class="step-n">2</div><div class="step-t">Ran A/B tests on messaging and offers to optimise conversion rates</div></div>
-            <div class="step"><div class="step-n">3</div><div class="step-t">Pivoted mid-simulation to email marketing and gamification to address churn</div></div>
-            <div class="step"><div class="step-n">4</div><div class="step-t">Achieved 96.1% retention and a ROMI of 2.27 by the final year</div></div>
-          </div>
-          <div class="case-metrics">
-            <span class="mpill">ROMI 2.27</span><span class="mpill">96.1% retention</span><span class="mpill">A/B testing</span><span class="mpill">Regression analysis</span><span class="mpill">Gamification strategy</span>
+      <div class="mini-card ani fr d3">
+        <div class="mini-card-top">
+          <span class="ptag pt-amber" style="margin-bottom:0.6rem;">Simulation</span>
+          <h3>ExerciseMinder — Long-Term Retention Strategy</h3>
+          <div class="sub">Strategic Marketing · RMIT University</div>
+          <div class="mini-rows">
+            <div class="mini-row"><div class="mini-row-label">Problem</div><div class="mini-row-val">Churn was increasing in years four and five as competitors entered the market with aggressive pricing.</div></div>
+            <div class="mini-row"><div class="mini-row-label">What I did</div><div class="mini-row-val">Shifted budget from acquisition to retention, introduced gamification mechanics, and doubled email frequency to high-risk cohorts.</div></div>
+            <div class="mini-row"><div class="mini-row-label">Insight</div><div class="mini-row-val">Retention spend delivered 3x the ROI of acquisition spend in years five through nine. Email outperformed paid social significantly.</div></div>
+            <div class="mini-row"><div class="mini-row-label">Outcome</div><div class="mini-row-val">96.1% retention rate and a ROMI of 2.27 by year nine. Gamification reduced the 90-day churn window by an estimated 18%.</div></div>
           </div>
         </div>
-        <div class="case-footer">
-          <div style="display:flex;gap:5px;flex-wrap:wrap;">
-            <span class="tbadge">Excel</span><span class="tbadge">Regression analysis</span><span class="tbadge">A/B testing</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- SEO KEYWORD RESEARCH -->
-      <div class="seo-card ani from-right d3">
-        <div class="seo-banner"></div>
-        <div class="seo-inner">
-          <div class="seo-left">
-            <span class="case-tag tag-blue">SEO Strategy</span>
-            <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:0.25rem;">Low Cholesterol Diet — Keyword Research and Content Cluster Architecture</h3>
-            <div style="font-size:12px;color:var(--muted);margin-bottom:0.85rem;">ECPL (Education Culture Pvt Ltd) · Live Internship Work</div>
-            <p style="font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:0.85rem;">Built a full keyword architecture for a health content client, mapping 60+ keywords across 6 intent-based clusters. The structure was designed to capture users at every stage of the funnel, from broad awareness all the way through to high-intent FAQ queries, supporting a content pillar and supporting page SEO strategy.</p>
-            <div class="case-steps" style="gap:5px;">
-              <div class="step"><div class="step-n">1</div><div class="step-t">Identified primary keyword "low cholesterol diet" at 35,000 monthly searches (USA)</div></div>
-              <div class="step"><div class="step-n">2</div><div class="step-t">Built 5 secondary clusters covering core variations, food-focused, time-based, general, and FAQ intent</div></div>
-              <div class="step"><div class="step-n">3</div><div class="step-t">Surfaced high-volume time-based queries such as "reduce cholesterol in 7 days" at 37,000 searches per month</div></div>
-              <div class="step"><div class="step-n">4</div><div class="step-t">Structured clusters to directly support the pillar plus supporting page architecture</div></div>
-            </div>
-            <div class="case-metrics" style="margin-top:0.85rem;">
-              <span class="mpill">60+ keywords mapped</span><span class="mpill">6 content clusters</span><span class="mpill">35k primary volume</span><span class="mpill">Intent mapping</span>
-            </div>
-            <div style="margin-top:0.85rem;display:flex;gap:5px;flex-wrap:wrap;">
-              <span class="tbadge">Ahrefs</span><span class="tbadge">SEMrush</span><span class="tbadge">Content clustering</span><span class="tbadge">Search intent analysis</span>
-            </div>
-          </div>
-          <div class="seo-right">
-            <div class="chart-title">Top keywords by monthly search volume (USA)</div>
-            <div id="kw-bars"></div>
-            <div style="margin-top:1.25rem;">
-              <div class="chart-title">Keyword cluster overview</div>
-              <div class="cluster-grid" id="clusters"></div>
-            </div>
+        <div class="mini-card-bottom">
+          <div class="mini-outcome">
+            <div class="mini-outcome-num">2.27</div>
+            <div class="mini-outcome-desc">ROMI achieved by year 9.<br>96.1% customer retention rate.</div>
           </div>
         </div>
       </div>
@@ -496,57 +677,47 @@ footer{background:#060e1a;color:rgba(255,255,255,0.2);text-align:center;padding:
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
+<!-- ⑦ ABOUT -->
+<section class="sec sec-light" id="about">
   <div class="inner">
-    <div class="s-eyebrow ani">Skills</div>
-    <div class="s-title ani d1">What I work with</div>
-    <p class="s-desc ani d2">A combination of strategic, analytical, and operational capabilities built across real-world projects and professional experience.</p>
-    <div class="skills-grid">
-      <div class="skill-group ani d1"><h3>Marketing and Strategy</h3><span class="skill-tag">Customer journey mapping</span><span class="skill-tag">SEO strategy</span><span class="skill-tag">Go-to-market planning</span><span class="skill-tag">Brand strategy</span><span class="skill-tag">Campaign planning</span><span class="skill-tag">Market research</span></div>
-      <div class="skill-group ani d2"><h3>Consulting</h3><span class="skill-tag">CLV/CAC analysis</span><span class="skill-tag">Data-driven decisions</span><span class="skill-tag">Stakeholder management</span><span class="skill-tag">Problem reframing</span><span class="skill-tag">Behavioural insights</span></div>
-      <div class="skill-group ani d3"><h3>Operations</h3><span class="skill-tag">Inventory management</span><span class="skill-tag">Supplier negotiation</span><span class="skill-tag">Merchandising</span><span class="skill-tag">Category management</span><span class="skill-tag">Cost reduction</span></div>
-      <div class="skill-group ani d4"><h3>Leadership</h3><span class="skill-tag">Team supervision</span><span class="skill-tag">Cross-functional collaboration</span><span class="skill-tag">Communication</span><span class="skill-tag">Adaptability</span><span class="skill-tag">Problem solving under pressure</span></div>
-    </div>
-    <div class="tools-row ani d3">
-      <span class="tool-chip">Google Analytics</span><span class="tool-chip">Tableau</span><span class="tool-chip">Excel (Advanced)</span><span class="tool-chip">Ahrefs</span><span class="tool-chip">SEMrush</span><span class="tool-chip">Mailchimp</span><span class="tool-chip">HubSpot</span><span class="tool-chip">Canva</span><span class="tool-chip">PowerPoint</span>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="inner">
-    <div class="s-eyebrow ani">Education</div>
-    <div class="s-title ani d1">Academic foundation</div>
-    <p class="s-desc ani d2">Formal training in marketing, strategy, and business management.</p>
-    <div class="edu-grid">
-      <div class="edu-card ani from-left d2">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-degree">MBA — Marketing</div>
-        <div class="edu-uni">RMIT University, Melbourne</div>
-        <div class="edu-year">Graduated 2025</div>
+    <div class="sec-eye ani">About</div>
+    <div class="sec-title ani d1">A bit about me</div>
+    <div class="about-wrap">
+      <div class="about-text ani d2">
+        <p>I am an MBA (Marketing) graduate from RMIT University with experience across retail management, consulting projects, and digital analytics. My background spans both the operational and strategic sides of marketing, which means I understand how decisions play out in practice, not just on paper.</p>
+        <p>I am particularly interested in growth, customer behaviour, and using data to drive smarter marketing decisions. I enjoy the process of turning messy data or unclear briefs into structured thinking and clear recommendations.</p>
+        <p>Outside of work, I am drawn to understanding what makes people buy, stay, or leave — and how small changes in positioning or channel mix can have a disproportionate impact on results.</p>
       </div>
-      <div class="edu-card ani from-right d3">
-        <div class="edu-icon">📖</div>
-        <div class="edu-degree">Bachelor of Arts (Honours)</div>
-        <div class="edu-uni">Panjab University, Chandigarh</div>
-        <div class="edu-year">Graduated 2021</div>
+      <div class="about-aside ani fr d3">
+        <div class="aside-card">
+          <h4>Education</h4>
+          <p><strong>MBA — Marketing</strong><br>RMIT University, Melbourne<br>Graduated 2025</p>
+          <br>
+          <p><strong>Bachelor of Arts (Honours)</strong><br>Panjab University, Chandigarh<br>Graduated 2021</p>
+        </div>
+        <div class="aside-card">
+          <h4>Location</h4>
+          <p>Melbourne, Victoria, Australia.<br>Open to roles across Australia including remote and hybrid.</p>
+        </div>
+        <div class="aside-card">
+          <h4>Interests</h4>
+          <p>Customer behaviour, growth strategy, data storytelling, and marketing analytics.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
+<!-- ⑧ CONTACT -->
+<section class="sec sec-dark" id="contact">
   <div class="inner">
-    <div class="contact-box ani from-scale">
-      <h2>Let's connect</h2>
-      <p>Open to marketing, growth, and consulting opportunities across Australia.</p>
+    <div class="contact-inner ani fs">
+      <h2>Let's talk</h2>
+      <p>Open to marketing, growth, and consulting roles across Australia. Feel free to reach out directly.</p>
       <div class="contact-links">
-        <a class="clink primary" href="mailto:Kaushalbhavya2@gmail.com">✉ Email me</a>
-        <a class="clink" href="https://linkedin.com/in/bhavya-kaushal-123088123" target="_blank">LinkedIn ↗</a>
-        <a class="clink" href="tel:+61478040923">+61 478 040 923</a>
+        <a class="clink clink-primary" href="mailto:Kaushalbhavya2@gmail.com">✉ Email me</a>
+        <a class="clink clink-outline" href="https://linkedin.com/in/bhavya-kaushal-123088123" target="_blank">LinkedIn ↗</a>
+        <a class="clink clink-outline" href="tel:+61478040923">+61 478 040 923</a>
       </div>
     </div>
   </div>
@@ -555,81 +726,74 @@ footer{background:#060e1a;color:rgba(255,255,255,0.2);text-align:center;padding:
 <footer>Bhavya Kaushal · MBA Marketing · Melbourne, Australia</footer>
 
 <script>
+function s(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
 // Scroll animations
-function checkVisible(){
+function checkVis(){
   document.querySelectorAll('.ani:not(.on)').forEach(function(el){
-    var rect=el.getBoundingClientRect();
-    if(rect.top<(window.innerHeight||document.documentElement.clientHeight)-40){
+    if(el.getBoundingClientRect().top<(window.innerHeight||document.documentElement.clientHeight)-50){
       el.classList.add('on');
     }
   });
 }
-window.addEventListener('scroll',checkVisible,{passive:true});
-setTimeout(checkVisible,100);
-setTimeout(checkVisible,500);
+window.addEventListener('scroll',checkVis,{passive:true});
+setTimeout(checkVis,120);
+setTimeout(checkVis,600);
 
-// CLV vs CAC bar animation
-var clvAnimated=false;
-function animateCLV(){
-  if(clvAnimated)return;
-  var chart=document.getElementById('clv-chart');
-  if(!chart)return;
-  var rect=chart.getBoundingClientRect();
-  if(rect.top<(window.innerHeight||document.documentElement.clientHeight)-40){
-    clvAnimated=true;
-    var barClv=document.getElementById('bar-clv');
-    var barCac=document.getElementById('bar-cac');
-    var clvVal=document.getElementById('clv-val');
-    var cacVal=document.getElementById('cac-val');
-    barClv.style.height='90%';
-    barCac.style.height='5%';
-    // Count up
-    var start=performance.now();
-    var dur=1400;
-    function countUp(now){
-      var prog=Math.min((now-start)/dur,1);
-      var ease=1-Math.pow(1-prog,3);
-      clvVal.textContent='$'+Math.round(1800*ease).toLocaleString();
-      cacVal.textContent='$'+Math.round(100*ease).toLocaleString();
-      if(prog<1)requestAnimationFrame(countUp);
-    }
-    requestAnimationFrame(countUp);
+// CLV/CAC bar chart
+var clvDone=false;
+function runCLV(){
+  if(clvDone)return;
+  var el=document.getElementById('bar-clv');
+  if(!el)return;
+  var r=el.getBoundingClientRect();
+  if(r.top<(window.innerHeight||document.documentElement.clientHeight)-60){
+    clvDone=true;
+    document.getElementById('bar-clv').style.height='90%';
+    document.getElementById('bar-cac').style.height='5%';
+    var t0=performance.now();
+    (function tick(now){
+      var p=Math.min((now-t0)/1400,1);
+      var e=1-Math.pow(1-p,3);
+      document.getElementById('clv-val').textContent='$'+Math.round(1800*e).toLocaleString();
+      document.getElementById('cac-val').textContent='$'+Math.round(100*e).toLocaleString();
+      if(p<1)requestAnimationFrame(tick);
+    })(t0);
   }
 }
-window.addEventListener('scroll',animateCLV,{passive:true});
-setTimeout(animateCLV,600);
+window.addEventListener('scroll',runCLV,{passive:true});
+setTimeout(runCLV,600);
 
-// Keyword bars
+// SEO keyword bars
+var kwDone=false;
 var kws=[
-  ['how to reduce cholesterol in 7 days',37],
-  ['low cholesterol diet',35],
-  ['how much cholesterol per day',18],
-  ['foods to lower cholesterol',15],
-  ['foods that lower cholesterol',14],
-  ['how to reduce cholesterol in 30 days',11],
-  ['cholesterol lowering foods',11],
-  ['what reduces cholesterol quickly',9.2],
+  ['Reduce cholesterol in 7 days',37],
+  ['Low cholesterol diet',35],
+  ['How much cholesterol per day',18],
+  ['Foods to lower cholesterol',15],
+  ['Foods that lower cholesterol',14],
+  ['Reduce cholesterol in 30 days',11],
+  ['Cholesterol lowering foods',11],
+  ['What reduces cholesterol quickly',9.2],
 ];
 var barsEl=document.getElementById('kw-bars');
-kws.forEach(function(kw){
-  var pct=Math.round((kw[1]/37)*100);
-  barsEl.innerHTML+='<div class="kw-bar-wrap"><div class="kw-label"><span class="kw-name">'+kw[0]+'</span><span class="kw-vol">'+kw[1]+'k</span></div><div class="kw-track"><div class="kw-fill" style="width:0%" data-pct="'+pct+'"></div></div></div>';
-});
-
-var kwAnimated=false;
-function animateKW(){
-  if(kwAnimated)return;
-  if(!barsEl)return;
-  var rect=barsEl.getBoundingClientRect();
-  if(rect.top<(window.innerHeight||document.documentElement.clientHeight)-40){
-    kwAnimated=true;
+if(barsEl){
+  kws.forEach(function(kw){
+    var pct=Math.round((kw[1]/37)*100);
+    barsEl.innerHTML+='<div class="kw-bar-wrap"><div class="kw-label"><span class="kw-name">'+kw[0]+'</span><span class="kw-vol">'+kw[1]+'k</span></div><div class="kw-track"><div class="kw-fill" data-pct="'+pct+'"></div></div></div>';
+  });
+}
+function runKW(){
+  if(kwDone||!barsEl)return;
+  if(barsEl.getBoundingClientRect().top<(window.innerHeight||document.documentElement.clientHeight)-60){
+    kwDone=true;
     document.querySelectorAll('.kw-fill').forEach(function(el){
-      setTimeout(function(){el.style.width=el.getAttribute('data-pct')+'%';},100);
+      setTimeout(function(){el.style.width=el.getAttribute('data-pct')+'%';},80);
     });
   }
 }
-window.addEventListener('scroll',animateKW,{passive:true});
-setTimeout(animateKW,600);
+window.addEventListener('scroll',runKW,{passive:true});
+setTimeout(runKW,600);
 
 // Cluster chips
 var clusters=[
@@ -638,9 +802,11 @@ var clusters=[
   ['FAQ intent','~39k'],['Primary keyword','35k'],
 ];
 var clEl=document.getElementById('clusters');
-clusters.forEach(function(c){
-  clEl.innerHTML+='<div class="cluster-chip"><div class="cluster-cn">'+c[0]+'</div><div class="cluster-cv">'+c[1]+'/mo</div></div>';
-});
+if(clEl){
+  clusters.forEach(function(c){
+    clEl.innerHTML+='<div class="cluster-chip"><div class="cluster-cn">'+c[0]+'</div><div class="cluster-cv">'+c[1]+'/mo</div></div>';
+  });
+}
 </script>
 </body>
 </html>
